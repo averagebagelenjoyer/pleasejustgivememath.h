@@ -8,17 +8,6 @@
 */
 
 /**
- * @mainpage PJGM
- *
- * Welcome to the documentation for PJGM.
- *
- * Best to begin at [PJGM.h](./pjgm_8h.html).
- *
- * Additional information about features can be found in the [README](https://github.com/averagebagelenjoyer/pleasejustgivememath.h).
- */
-
-
-/**
  * @file pjgm.h
  * @brief The main library
  * @warning `pjgm_init()` must be ran first, or else undefined behavior may occur
@@ -29,6 +18,22 @@
 #include <time.h>
 
 static unsigned int rng_state = 0;
+
+static inline unsigned int xorshift32(void)
+{
+    unsigned int x = rng_state;
+    x ^= x << 13;
+    x ^= x >> 17;
+    x ^= x << 5;
+    rng_state = x;
+    return x;
+}
+
+static int cmp_double(const void *a, const void *b) {
+    double x = *(const double*)a;
+    double y = *(const double*)b;
+    return (x > y) - (x < y);
+}
 
 /**
  * @brief Initalizes the PJGM library. Should be used before any other functions are
@@ -41,16 +46,6 @@ int pjgm_init()
     return 0;
 }
 
-static inline unsigned int xorshift32(void)
-{
-    unsigned int x = rng_state;
-    x ^= x << 13;
-    x ^= x >> 17;
-    x ^= x << 5;
-    rng_state = x;
-    return x;
-}
-
 /**
  * @brief Generates a pseudorandom integer
  * @param minimum Minimum value (inclusive)
@@ -59,6 +54,7 @@ static inline unsigned int xorshift32(void)
  *
  * @note This function is not thread-safe due to shared RNG state
  * @warning Behavior is undefined if minimum > maximum
+ * @ingroup random
  */
 inline int pjgm_random_int(const int minimum, const int maximum)
 {
@@ -73,8 +69,24 @@ inline int pjgm_random_int(const int minimum, const int maximum)
  *
  * @note This function is not thread-safe due to shared RNG state
  * @warning Behavior is undefined if minimum > maximum
+ * @ingroup random
  */
 inline float pjgm_random_float(const float minimum, const float maximum)
+{
+    return minimum + (xorshift32() * (1.0f / (1ull << 32))) * (maximum - minimum);
+}
+
+/**
+ * @brief Generates a pseudorandom float
+ * @param minimum Minimum value (inclusive)
+ * @param maximum Maximum value (exclusive)
+ * @return A pseudorandom float in the range of [minimum, maximum)
+ *
+ * @note This function is not thread-safe due to shared RNG state
+ * @warning Behavior is undefined if minimum > maximum
+ * @ingroup random
+ */
+inline double pjgm_random_double(const double minimum, const double maximum)
 {
     return minimum + (xorshift32() * (1.0f / (1ull << 32))) * (maximum - minimum);
 }

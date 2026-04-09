@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>pleasejustgivememath.h: /src/pjgm.h File Reference</title>
+<title>pleasejustgivememath.h: Random Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('pjgm_8h.html','',''); });
+$(function(){initNavTree('group__random.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -88,34 +88,28 @@ $(function(){initNavTree('pjgm_8h.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">pjgm.h File Reference</div></div>
+  <div class="headertitle"><div class="title">Random Functions </div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>The main library.  
+<p>Random functions for different types.  
 <a href="#details">More...</a></p>
-
-<p><a href="pjgm_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a760462da2e1efe8af8d67cd3a95fd966" id="r_a760462da2e1efe8af8d67cd3a95fd966"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a760462da2e1efe8af8d67cd3a95fd966">pjgm_init</a> ()</td></tr>
-<tr class="memdesc:a760462da2e1efe8af8d67cd3a95fd966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initalizes the PJGM library. Should be used before any other functions are.  <br /></td></tr>
-<tr class="memitem:ga6f3f36164f35d533c9d87d89f0677901" id="r_ga6f3f36164f35d533c9d87d89f0677901"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__random.html#ga6f3f36164f35d533c9d87d89f0677901">pjgm_random_int</a> (const int minimum, const int maximum)</td></tr>
+<tr class="memitem:ga6f3f36164f35d533c9d87d89f0677901" id="r_ga6f3f36164f35d533c9d87d89f0677901"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga6f3f36164f35d533c9d87d89f0677901">pjgm_random_int</a> (const int minimum, const int maximum)</td></tr>
 <tr class="memdesc:ga6f3f36164f35d533c9d87d89f0677901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a pseudorandom integer.  <br /></td></tr>
-<tr class="memitem:ga4409605192016f3c857cfba2c2353f33" id="r_ga4409605192016f3c857cfba2c2353f33"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="group__random.html#ga4409605192016f3c857cfba2c2353f33">pjgm_random_float</a> (const float minimum, const float maximum)</td></tr>
+<tr class="memitem:ga4409605192016f3c857cfba2c2353f33" id="r_ga4409605192016f3c857cfba2c2353f33"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ga4409605192016f3c857cfba2c2353f33">pjgm_random_float</a> (const float minimum, const float maximum)</td></tr>
 <tr class="memdesc:ga4409605192016f3c857cfba2c2353f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a pseudorandom float.  <br /></td></tr>
-<tr class="memitem:gabb7c9ba68659cbe4d553d496fa1aa952" id="r_gabb7c9ba68659cbe4d553d496fa1aa952"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="group__random.html#gabb7c9ba68659cbe4d553d496fa1aa952">pjgm_random_double</a> (const double minimum, const double maximum)</td></tr>
+<tr class="memitem:gabb7c9ba68659cbe4d553d496fa1aa952" id="r_gabb7c9ba68659cbe4d553d496fa1aa952"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#gabb7c9ba68659cbe4d553d496fa1aa952">pjgm_random_double</a> (const double minimum, const double maximum)</td></tr>
 <tr class="memdesc:gabb7c9ba68659cbe4d553d496fa1aa952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a pseudorandom float.  <br /></td></tr>
-<tr class="memitem:a261707ff738bec2ff2f65c19dc1ad1e6" id="r_a261707ff738bec2ff2f65c19dc1ad1e6"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a261707ff738bec2ff2f65c19dc1ad1e6">clamp</a> (const float minimum, const float maximum, const float value)</td></tr>
-<tr class="memdesc:a261707ff738bec2ff2f65c19dc1ad1e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamps a value between two other values.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The main library. </p>
-<dl class="section warning"><dt>Warning</dt><dd><span class="tt"><a class="el" href="#a760462da2e1efe8af8d67cd3a95fd966" title="Initalizes the PJGM library. Should be used before any other functions are.">pjgm_init()</a></span> must be ran first, or else undefined behavior may occur </dd></dl>
+<div class="textblock"><p>Random functions for different types. </p>
+<p>More detailed description if needed. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a261707ff738bec2ff2f65c19dc1ad1e6" name="a261707ff738bec2ff2f65c19dc1ad1e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a261707ff738bec2ff2f65c19dc1ad1e6">&#9670;&#160;</a></span>clamp()</h2>
+<a id="gabb7c9ba68659cbe4d553d496fa1aa952" name="gabb7c9ba68659cbe4d553d496fa1aa952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabb7c9ba68659cbe4d553d496fa1aa952">&#9670;&#160;</a></span>pjgm_random_double()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -124,19 +118,14 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float clamp </td>
+          <td class="memname">double pjgm_random_double </td>
           <td>(</td>
-          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>minimum</em></span>, </td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>minimum</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>maximum</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>maximum</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -146,37 +135,99 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Clamps a value between two other values. </p>
+<p>Generates a pseudorandom float. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">minimum</td><td>Lower bound </td></tr>
-    <tr><td class="paramname">maximum</td><td>Upper bound </td></tr>
-    <tr><td class="paramname">value</td><td>The value to clamp </td></tr>
+    <tr><td class="paramname">minimum</td><td>Minimum value (inclusive) </td></tr>
+    <tr><td class="paramname">maximum</td><td>Maximum value (exclusive) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The clamped value</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pseudorandom float in the range of [minimum, maximum)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function is not thread-safe due to shared RNG state </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Behavior is undefined if minimum &gt; maximum </dd></dl>
 
 </div>
 </div>
-<a id="a760462da2e1efe8af8d67cd3a95fd966" name="a760462da2e1efe8af8d67cd3a95fd966"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a760462da2e1efe8af8d67cd3a95fd966">&#9670;&#160;</a></span>pjgm_init()</h2>
+<a id="ga4409605192016f3c857cfba2c2353f33" name="ga4409605192016f3c857cfba2c2353f33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4409605192016f3c857cfba2c2353f33">&#9670;&#160;</a></span>pjgm_random_float()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int pjgm_init </td>
+          <td class="memname">float pjgm_random_float </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>minimum</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>maximum</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Initalizes the PJGM library. Should be used before any other functions are. </p>
-<dl class="section return"><dt>Returns</dt><dd>Status, 0 if successful, -1 if unsuccessful </dd></dl>
+<p>Generates a pseudorandom float. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">minimum</td><td>Minimum value (inclusive) </td></tr>
+    <tr><td class="paramname">maximum</td><td>Maximum value (exclusive) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pseudorandom float in the range of [minimum, maximum)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function is not thread-safe due to shared RNG state </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Behavior is undefined if minimum &gt; maximum </dd></dl>
+
+</div>
+</div>
+<a id="ga6f3f36164f35d533c9d87d89f0677901" name="ga6f3f36164f35d533c9d87d89f0677901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f3f36164f35d533c9d87d89f0677901">&#9670;&#160;</a></span>pjgm_random_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pjgm_random_int </td>
+          <td>(</td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>minimum</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>maximum</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a pseudorandom integer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">minimum</td><td>Minimum value (inclusive) </td></tr>
+    <tr><td class="paramname">maximum</td><td>Maximum value (inclusive) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pseudorandom integer in the range of [minimum, maximum]</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function is not thread-safe due to shared RNG state </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Behavior is undefined if minimum &gt; maximum </dd></dl>
 
 </div>
 </div>
@@ -193,7 +244,6 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="pjgm_8h.html">pjgm.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

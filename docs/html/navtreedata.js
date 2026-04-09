@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "pleasejustgivememath.h", "index.html", [
     [ "PJGM", "index.html", null ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [

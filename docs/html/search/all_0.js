@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['h_0',['pleasejustgivememath.h',['../dir_68267d1309a1af8e8297ef4c3efbcdba.html#autotoc_md0',1,'']]]
+  ['clamp_0',['clamp',['../pjgm_8h.html#a261707ff738bec2ff2f65c19dc1ad1e6',1,'pjgm.c']]]
 ];
