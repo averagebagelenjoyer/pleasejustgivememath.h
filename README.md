@@ -6,4 +6,4 @@ Math is annoying. Computers are fast. I decided to exploit that fact.
 - fast (uses the fastest algorithms available)
 - self-documenting code
 
-> Full documentation is available here: [temporary link](https://www.example.com)
+> Full documentation is available here: [link](https://averagebagelenjoyer.github.io/pleasejustgivememath.h/html/)
