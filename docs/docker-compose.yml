@@ -1,0 +1,11 @@
+services:
+  archlinux:
+    image: archlinux:latest
+    container_name: doxygen
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    volumes:
+      - ../:/src:ro
+      - ./:/dist:rw
+    command: /bin/bash -c "/src/docs/setup.sh"
