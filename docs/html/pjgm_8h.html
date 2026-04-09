@@ -100,15 +100,15 @@ $(function(){initNavTree('pjgm_8h.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a760462da2e1efe8af8d67cd3a95fd966" id="r_a760462da2e1efe8af8d67cd3a95fd966"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a760462da2e1efe8af8d67cd3a95fd966">pjgm_init</a> ()</td></tr>
-<tr class="memdesc:a760462da2e1efe8af8d67cd3a95fd966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initalizes the library.  <br /></td></tr>
+<tr class="memdesc:a760462da2e1efe8af8d67cd3a95fd966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initalizes the PJGM library. Should be used before any other functions are.  <br /></td></tr>
 <tr class="memitem:a6f3f36164f35d533c9d87d89f0677901" id="r_a6f3f36164f35d533c9d87d89f0677901"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a6f3f36164f35d533c9d87d89f0677901">pjgm_random_int</a> (const int minimum, const int maximum)</td></tr>
-<tr class="memdesc:a6f3f36164f35d533c9d87d89f0677901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random integer (pseudorandom).  <br /></td></tr>
+<tr class="memdesc:a6f3f36164f35d533c9d87d89f0677901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a pseudorandom integer.  <br /></td></tr>
 <tr class="memitem:a4409605192016f3c857cfba2c2353f33" id="r_a4409605192016f3c857cfba2c2353f33"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a4409605192016f3c857cfba2c2353f33">pjgm_random_float</a> (const float minimum, const float maximum)</td></tr>
-<tr class="memdesc:a4409605192016f3c857cfba2c2353f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random float (pseudorandom).  <br /></td></tr>
+<tr class="memdesc:a4409605192016f3c857cfba2c2353f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a pseudorandom float.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The main library. </p>
-<dl class="section warning"><dt>Warning</dt><dd><span class="tt"><a class="el" href="#a760462da2e1efe8af8d67cd3a95fd966" title="Initalizes the library.">pjgm_init()</a></span> must be ran first, or else undefined behavior may occur </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd><span class="tt"><a class="el" href="#a760462da2e1efe8af8d67cd3a95fd966" title="Initalizes the PJGM library. Should be used before any other functions are.">pjgm_init()</a></span> must be ran first, or else undefined behavior may occur </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a760462da2e1efe8af8d67cd3a95fd966" name="a760462da2e1efe8af8d67cd3a95fd966"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a760462da2e1efe8af8d67cd3a95fd966">&#9670;&#160;</a></span>pjgm_init()</h2>
@@ -125,7 +125,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initalizes the library. </p>
+<p>Initalizes the PJGM library. Should be used before any other functions are. </p>
 <dl class="section return"><dt>Returns</dt><dd>Status, 0 if successful, -1 if unsuccessful </dd></dl>
 
 </div>
@@ -157,15 +157,17 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Generates a random float (pseudorandom). </p>
+<p>Generates a pseudorandom float. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">minimum</td><td>Minimum value (exclusive) </td></tr>
-    <tr><td class="paramname">maximum</td><td>Maximum value (inclusive) </td></tr>
+    <tr><td class="paramname">minimum</td><td>Minimum value (inclusive) </td></tr>
+    <tr><td class="paramname">maximum</td><td>Maximum value (exclusive) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A random float between the minimum and maximum </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pseudorandom float in the range of [minimum, maximum)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function is not thread-safe due to shared RNG state </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Behavior is undefined if minimum &gt; maximum </dd></dl>
 
 </div>
 </div>
@@ -196,15 +198,17 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Generates a random integer (pseudorandom). </p>
+<p>Generates a pseudorandom integer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">minimum</td><td>Minimum value (exclusive) </td></tr>
+    <tr><td class="paramname">minimum</td><td>Minimum value (inclusive) </td></tr>
     <tr><td class="paramname">maximum</td><td>Maximum value (inclusive) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A random integer between the minimum and maximum </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pseudorandom integer in the range of [minimum, maximum]</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function is not thread-safe due to shared RNG state </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Behavior is undefined if minimum &gt; maximum </dd></dl>
 
 </div>
 </div>

@@ -14,7 +14,7 @@
  *
  * Best to begin at [PJGM.h](./pjgm_8h.html).
  *
- * Additional information about features can be found in the [README](https://github.com/averagebagelenjoyer/pleasejustgivememath.h/blob/documentation/README.md).
+ * Additional information about features can be found in the [README](https://github.com/averagebagelenjoyer/pleasejustgivememath.h).
  */
 
 
@@ -31,7 +31,7 @@
 static unsigned int rng_state = 0;
 
 /**
- * @brief Initalizes the library
+ * @brief Initalizes the PJGM library. Should be used before any other functions are
  * @return Status, 0 if successful, -1 if unsuccessful
  */
 int pjgm_init()
@@ -52,10 +52,13 @@ static inline unsigned int xorshift32(void)
 }
 
 /**
- * @brief Generates a random integer (pseudorandom)
- * @param minimum Minimum value (exclusive)
+ * @brief Generates a pseudorandom integer
+ * @param minimum Minimum value (inclusive)
  * @param maximum Maximum value (inclusive)
- * @return A random integer between the minimum and maximum
+ * @return A pseudorandom integer in the range of [minimum, maximum]
+ *
+ * @note This function is not thread-safe due to shared RNG state
+ * @warning Behavior is undefined if minimum > maximum
  */
 inline int pjgm_random_int(const int minimum, const int maximum)
 {
@@ -63,10 +66,13 @@ inline int pjgm_random_int(const int minimum, const int maximum)
 }
 
 /**
- * @brief Generates a random float (pseudorandom)
- * @param minimum Minimum value (exclusive)
- * @param maximum Maximum value (inclusive)
- * @return A random float between the minimum and maximum
+ * @brief Generates a pseudorandom float
+ * @param minimum Minimum value (inclusive)
+ * @param maximum Maximum value (exclusive)
+ * @return A pseudorandom float in the range of [minimum, maximum)
+ *
+ * @note This function is not thread-safe due to shared RNG state
+ * @warning Behavior is undefined if minimum > maximum
  */
 inline float pjgm_random_float(const float minimum, const float maximum)
 {
@@ -75,10 +81,12 @@ inline float pjgm_random_float(const float minimum, const float maximum)
 
 /**
  * @brief Clamps a value between two other values
- * @param minimum Minimum value (exclusive)
- * @param maximum Maximum value (inclusive)
- * @param value The value to be clamped
+ * @param minimum Lower bound
+ * @param maximum Upper bound
+ * @param value The value to clamp
  * @return The clamped value
+ *
+ * @warning Behavior is undefined if minimum > maximum
  */
 inline float clamp(const float minimum, const float maximum, const float value)
 {
